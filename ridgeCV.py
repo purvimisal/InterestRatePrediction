@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 from sklearn import metrics
-from sklearn.linear_model import LinearRegression, LogisticRegression
+from sklearn import linear_model
 from sklearn.cross_validation import train_test_split
 
 df = pd.read_csv('data.csv',index_col=0)
@@ -11,14 +11,12 @@ y = y.astype('int')
 #train test split
 X_train, X_test, y_train, y_test = train_test_split(x,y, test_size = 0.3)
 
-#linreg = LinearRegression()
-#linreg.fit(X_train, y_train)
+reg = linear_model.RidgeCV(alphas=[0.1, 1.0, 10.0])
+reg.fit(X_train, y_train)
 
-
-logreg = LogisticRegression()
-logreg.fit(X_train, y_train)
-
-ytest_pred = logreg.predict(X_test)
+ytest_pred = reg.predict(X_test)
 print(ytest_pred)
-#print(y_test)
-#print(metrics.accuracy_score(y_test, ytest_pred))
+
+print("alpha_ ", reg.alpha_)
+print("Intercept= ", reg.intercept_)
+print("Coeff= ", reg.coef_)
