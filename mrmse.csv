@@ -1,0 +1,16 @@
+Regression,Normal
+Ridge,1.57
+Standardized Ridge,1.62
+Rescaled Ridge,1.53
+Ridge CV,1.58
+Standardized RidgeCV,1.69
+Rescaled RidgeCV,1.65
+Lasso,1.65
+Standardized Lasso,1.85
+Rescaled Lasso,2.51
+Linear,1.62
+Standardized Linear,1.63
+Rescaled Linear,1.51
+Lasso-lars,1.83
+Standardized Lasso-lars,2.43
+Rescaled Lasso-lars,2.93
